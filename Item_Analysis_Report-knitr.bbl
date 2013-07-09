@@ -1,0 +1,50 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{apa}
+    \entry{elvin}{article}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=15a694776dc43b4171c16415f9d38918}{Elvin}{E\bibinitperiod}{Chris}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=15a694776dc43b4171c16415f9d38918}{Elvin}{E\bibinitperiod}{Chris}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{15a694776dc43b4171c16415f9d38918}
+      \strng{fullhash}{15a694776dc43b4171c16415f9d38918}
+      \field{sortinit}{E}
+      \field{labelyear}{2003}
+      \field{labeltitle}{Test Item Analysis Using {Microsoft Excel} Spreadsheet Program}
+      \field{journaltitle}{The Language Teacher}
+      \field{number}{11}
+      \field{title}{Test Item Analysis Using {Microsoft Excel} Spreadsheet Program}
+      \field{urlday}{09}
+      \field{urlmonth}{07}
+      \field{urlyear}{2013}
+      \field{volume}{27}
+      \field{year}{2003}
+      \field{pages}{13\bibrangedash 18}
+      \verb{url}
+      \verb http://www.eflclub.com/elvin/publications/2003/itemanalysis.html
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

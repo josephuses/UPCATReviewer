@@ -1,0 +1,13 @@
+base
+codetools
+CTT
+datasets
+filehash
+graphics
+grDevices
+knitr
+methods
+psych
+stats
+tikzDevice
+utils

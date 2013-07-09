@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\begin{document}
+
+<<wehehehe>>=
+
+Dataset <- 
+  read.table("/home/josephuses/Documents/UPCATReviewer/Test_Item_Analysis/persubject.csv", 
+  header=TRUE, sep=",", na.strings="NA", dec=".", strip.white=TRUE)
+cor(Dataset[,c("Biology","Chemistry","English","Filipino","Geology","Math",
+  "Physics")], use="complete.obs")
+r = c(t(as.matrix(Dataset)))
+f = c("Biology","Chemistry","English","Filipino","Geology","Math","Physics")
+k = 7
+n = 78
+tm = gl(k,1,n*k,factor(f))
+av = aov(r ~ tm)
+summary(av)
+TukeyHSD(av)
+summary(Dataset)
+var(Dataset)
+sd(Dataset)
+boxplot(Dataset)
+
+@
+
+
+\end{document}

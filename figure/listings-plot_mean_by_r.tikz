@@ -1,0 +1,751 @@
+% Created by tikzDevice version 0.6.2-92-0ad2792 on 2013-06-04 09:35:53
+% !TEX encoding = UTF-8 Unicode
+ 
+\documentclass[a4paper]{article}
+\nonstopmode
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage,psfixbb]{preview}
+
+\PreviewEnvironment{pgfpicture}
+
+\setlength\PreviewBorder{0pt}
+
+\newcommand{\SweaveOpts}[1]{}  % do not interfere with LaTeX
+\newcommand{\SweaveInput}[1]{} % because they are not real TeX commands
+\newcommand{\Sexpr}[1]{}       % will only be parsed by R
+
+
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{inconsolata}
+\usepackage{caption}
+\captionsetup{skip=0pt,labelfont=bf}
+\lstset{breaklines=true,showstringspaces=false,basicstyle = \small\ttfamily,}
+\newcommand{\Rstat}{\textsf{R}}
+\setkeys{Gin}{width=0.8\textwidth}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[left=1in, right=1in, top=30mm, bottom=30mm, 
+      includefoot, headheight=13.6pt]{geometry} 
+      %set margins to be 30mm (needs to include page numbers
+\hypersetup{pdfpagelayout=SinglePage} 
+% http://www.tug.org/applications/hyperref/ftp/doc/manual.html                                
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+} % have links but print like standard text 
+% http://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+
+
+\newcommand{\Cases}{\texttt{cases.tsv}}
+
+
+
+
+
+\begin{document}
+
+\begin{tikzpicture}[x=1pt,y=1pt]
+\definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
+\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (433.62,361.35);
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (433.62,361.35);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 34.64, 24.48) -- (412.36, 24.48);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 34.64, 24.48) -- ( 34.64, 22.08);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (110.18, 24.48) -- (110.18, 22.08);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (185.73, 24.48) -- (185.73, 22.08);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (261.27, 24.48) -- (261.27, 22.08);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (336.82, 24.48) -- (336.82, 22.08);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (412.36, 24.48) -- (412.36, 22.08);
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 34.64, 15.84) {0.0};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18, 15.84) {0.2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73, 15.84) {0.4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (261.27, 15.84) {0.6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82, 15.84) {0.8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (412.36, 15.84) {1.0};
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68, 66.96) -- ( 19.68,340.17);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68, 66.96) -- ( 17.28, 66.96);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68,135.26) -- ( 17.28,135.26);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68,203.57) -- ( 17.28,203.57);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68,271.87) -- ( 17.28,271.87);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68,340.17) -- ( 17.28,340.17);
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 13.92, 66.96) {-0.2};
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 13.92,203.57) {0.2};
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 13.92,271.87) {0.4};
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 13.92,340.17) {0.6};
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68, 24.48) --
+	(423.54, 24.48) --
+	(423.54,341.67) --
+	( 19.68,341.67) --
+	( 19.68, 24.48);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (433.62,361.35);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (221.61,  6.24) {mean};
+
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (  4.32,183.07) {r};
+\end{scope}
+\begin{scope}
+\path[clip] ( 19.68, 24.48) rectangle (423.54,341.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (363.26,247.86) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,217.12) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (268.83,121.78) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (299.04,162.48) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,128.61) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,179.83) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,155.65) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (249.94,224.23) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (257.49,176.42) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (125.29,207.15) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,114.67) {11};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (212.17,162.48) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82,132.02) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (397.25,213.71) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (385.92,196.91) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85, 77.38) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 61.08,220.54) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (299.04,179.83) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (370.81,268.62) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (344.37,183.25) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (295.27,261.52) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (333.04,196.63) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (321.71,244.72) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (363.26,165.89) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (113.96,159.34) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (257.49,138.85) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (242.38,176.14) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (231.05,118.36) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,169.59) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (249.94,183.25) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (306.60,213.98) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 76.19,152.51) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (231.05,237.89) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (227.28, 80.80) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (129.07,169.59) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (208.39,186.66) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (242.38,210.57) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52,159.34) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (272.60,183.25) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,132.02) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,193.22) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (208.39,145.40) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (348.15,166.17) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,135.16) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82,237.89) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (351.92,231.06) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,200.05) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50,173.00) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (159.29,196.91) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (333.04,210.57) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (223.50,193.22) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (212.17,176.14) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (125.29,159.34) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 83.74,173.00) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (249.94,220.54) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (249.94,244.72) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (280.16,237.89) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (147.95,220.81) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (147.95,230.78) {11};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,319.57) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (147.95,244.72) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (200.84,237.61) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,159.34) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52,104.70) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,220.54) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50, 80.80) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (249.94,108.12) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,193.49) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (174.39,138.57) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (238.61,104.42) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,101.29) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,148.82) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (223.50,193.49) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62, 94.46) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,148.82) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 76.19,213.98) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (147.95,111.53) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (174.39, 77.38) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (393.47,135.44) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (385.92,179.83) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (370.81,210.57) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (178.17,132.02) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 95.07,128.61) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (268.83,183.25) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (393.47,142.27) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 45.97, 77.38) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (219.72,138.85) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06,169.59) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (351.92,254.69) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (231.05, 73.69) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06,183.25) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82,179.56) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (382.14,166.17) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (166.84,155.93) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (287.71,179.56) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,104.70) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 95.07,132.02) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (117.74, 50.06) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,131.74) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (291.49, 66.86) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06,152.51) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,111.25) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96,135.44) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (299.04,227.64) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (291.49,189.80) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82,173.00) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (306.60,169.59) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (283.93,128.61) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (117.74,179.56) {11};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50,172.73) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (283.93,186.66) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 38.41,104.42) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (178.17,132.02) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,227.64) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,124.91) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (280.16,132.02) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (310.37,166.17) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,203.74) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (102.63,200.05) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50,131.74) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (268.83,159.34) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,104.42) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,254.96) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50,162.76) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (197.06,179.56) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (181.95,173.00) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (166.84,125.19) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73,183.25) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (151.73,101.29) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,207.15) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (265.05,179.83) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (295.27,203.74) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (227.28,173.00) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,132.02) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (333.04,231.06) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (257.49,179.83) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (181.95,149.10) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (106.40,173.00) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (159.29,203.46) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,182.97) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (325.48,173.00) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (340.59,213.71) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (117.74,118.36) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,135.44) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73,176.14) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (325.48,155.93) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 72.41,118.36) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,241.30) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,169.31) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73,217.12) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (102.63,101.29) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (306.60,206.88) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (329.26,166.17) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (166.84,224.23) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06, 63.44) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (306.60,162.76) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (231.05,173.00) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (325.48,196.91) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (314.15,189.80) {11};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (401.03,278.59) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (401.03,278.87) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (408.58,271.76) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (329.26,224.23) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (129.07,162.76) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,230.78) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (151.73,169.59) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (401.03,169.59) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,155.93) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (344.37,196.63) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,176.14) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (261.27,210.57) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,227.37) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96,101.29) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,125.19) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (159.29,176.14) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (106.40,145.68) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (397.25,176.42) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (367.03,179.83) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,176.42) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (178.17,190.08) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,193.49) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,155.93) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,173.00) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52, 94.46) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,104.70) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85, 50.06) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (287.71,166.17) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (238.61,193.49) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (181.95,155.65) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96, 77.10) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (106.40,166.17) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 83.74,135.16) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,173.00) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 68.63,159.34) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,152.23) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (348.15,207.15) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (291.49,213.98) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,138.85) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50,193.22) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (197.06,169.31) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (151.73,237.89) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (144.18,182.97) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,207.15) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,142.27) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73,217.12) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,149.10) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (144.18,176.42) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 91.30, 77.38) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 95.07,155.65) {11};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (242.38,220.54) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52,186.66) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96, 87.35) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (261.27,125.19) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 57.30,207.15) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,131.74) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,142.27) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96,190.08) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (136.62,138.85) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (295.27,179.56) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (136.62,135.16) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (147.95,183.25) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,135.16) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 91.30,145.68) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18, 80.80) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (197.06,152.23) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (223.50,193.49) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (174.39, 91.04) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 98.85,166.17) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (136.62,152.51) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18, 26.16) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,142.27) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 91.30,149.10) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (151.73,118.36) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 49.75, 56.89) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (174.39, 60.31) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (117.74,125.19) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (117.74,207.15) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52,162.76) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (178.17,162.48) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,107.84) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (102.63,203.74) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (151.73,189.80) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (144.18,135.44) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52, 43.23) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52, 60.03) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (102.63,152.51) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 57.30,190.08) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 64.86, 36.40) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (238.61, 77.10) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,179.56) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51, 94.46) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (178.17,101.01) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,132.02) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (276.38,183.25) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,186.39) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (121.51,142.27) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (215.94,176.42) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 53.52,203.74) {10};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (359.48, 77.10) {12};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,166.17) {13};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (140.40,182.97) {14};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (155.51,149.10) {15};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (155.51, 87.63) {16};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (181.95,189.80) {17};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (302.82,149.10) {18};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,128.61) {19};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (321.71,196.91) {20};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (257.49,206.88) {21};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (204.61,152.23) {22};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (344.37,128.61) {23};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (140.40,186.39) {24};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (185.73,173.00) {25};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (189.50, 63.72) {26};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (136.62,159.06) {27};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 87.52,183.25) {28};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (325.48, 87.63) {29};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (291.49,142.27) {30};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (234.83,183.25) {31};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (193.28,169.59) {32};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,190.08) {33};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (159.29,138.85) {34};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (132.85,186.66) {35};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06, 94.46) {36};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (280.16,166.17) {37};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (159.29, 87.63) {38};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (348.15,210.57) {39};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (325.48,145.68) {40};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (336.82,131.74) {41};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (166.84,179.56) {42};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,190.08) {43};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 83.74,193.22) {44};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (215.94,132.02) {45};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (155.51,220.81) {46};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (140.40,124.91) {47};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (246.16,173.00) {48};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (166.84,145.68) {49};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 79.96,142.27) {50};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (110.18,169.31) {1};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06,186.39) {2};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (170.62,166.17) {3};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (200.84, 97.59) {4};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (125.29,125.19) {5};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (140.40,118.36) {6};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (129.07, 83.93) {7};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at ( 76.19, 97.87) {8};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (174.39,121.78) {9};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  3.00] at (163.06,169.59) {10};
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] ( 19.68,203.57) -- (423.54,203.57);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (223.50, 24.48) -- (223.50,341.67);
+
+\path[draw=drawColor,line width= 0.4pt,line join=round,line cap=round] (374.59, 24.48) -- (374.59,341.67);
+\end{scope}
+\end{tikzpicture}
+
+\end{document}

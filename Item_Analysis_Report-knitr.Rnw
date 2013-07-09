@@ -1,0 +1,353 @@
+% 
+\documentclass[10pt,man]{apa6}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{./data/bibliography.bib}
+\usepackage{amsmath}
+%\usepackage{mathpazo}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{placeins}
+%\usepackage{courier}
+%\usepackage{caption}
+%\captionsetup{skip=0pt,labelfont=bf}
+\lstset{breaklines=true,showstringspaces=false,basicstyle = \small\ttfamily,}
+\newcommand{\Rstat}{\textsf{R}}
+\setkeys{Gin}{width=0.8\textwidth}
+\usepackage{hyperref}
+%\usepackage{booktabs}
+%\usepackage[left=1in, right=1in, top=30mm, bottom=30mm, 
+      %includefoot, headheight=13.6pt]{geometry} 
+      %set margins to be 30mm (needs to include page numbers
+\hypersetup{pdfpagelayout=SinglePage} 
+% http://www.tug.org/applications/hyperref/ftp/doc/manual.html                                
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+} % have links but print like standard text 
+% http://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+
+
+\newcommand{\Cases}{\texttt{cases.tsv}}
+\newcommand{\Items}{\texttt{items.tsv}}
+
+\usepackage{caption}
+\usepackage{minted}
+
+<<setup, include=FALSE, cache=FALSE>>=
+opts_chunk$set(fig.path = 'figure/listings-')
+options(replace.assign = TRUE, width=80)
+render_listings()
+@
+
+<<include=FALSE>>=
+opts_chunk$set(concordance=TRUE)
+@
+
+<<initial_settings, echo=FALSE>>=
+options(stringsAsFactors=FALSE)
+options(width=80)
+library(psych) # used scoring and alpha
+library(CTT) # used for spearman brown prophecy
+@
+
+<<import_data, echo=FALSE>>=
+cases <- read.delim("data/cases.tsv")
+items <- read.delim("meta/items.tsv")
+items$variable <- paste("item", items$item, sep="")
+@
+
+\title{Philippine Science High School-Cordillera Administrative Region University of the Philippines College Admission Test Pre-Test Material: Test Item Analysis and Reliability Analysis Using Classical Test Theory}
+\shorttitle{UPCAT Pre-Test Item Analysis}
+\author{Joseph S. Tabadero, Jr.}
+\affiliation{Science, Mathematics, and Technology Department}
+\leftheader{PSHS-CAR Campus}
+\abstract{
+The University of the Philippines College Admission Test (UPCAT) Pre-test material, which was developed by the Philippine Science High School Main Campus (PSHS-MC), and which has been in use in the Philippine Science High School Cordillera Administrative Region Campus (PSHS-CARC) since the school year 2012-2013, was purported to have high predictive validity with regards to UPCAT results. However, first it is necessary to establish the reliability of the test, as well as the effectiveness of each item in the test to discriminate among high and low performing students.  Therefore, the UPCAT \Sexpr{nrow(items)}-item Pre-Test, given to \Sexpr{nrow(cases)} members of Batch 2014, was subjected to Classical Test Theory test item analysis using R and LibreOffice. The results indicate that the test has good internal consistency, but there is a need to improve several items as well as distractors. Moreover, the results also show that the performance of the students in the pre-test is low.
+}
+\keywords{item analysis, Classical Test Theory, UPCAT Pre-Test}
+\authornote{Joseph S. Tabadero, Jr., Science, Mathematics and Technology Department, Curriculum and Instruction Services Division, Philippine Science High School-Cordillera Administrative Region Campus, Baguio City.
+
+  Correspondence concerning this article should be addressed to Joseph S. Tabadero, Jr., Science, Mathematics and Technology Department, Curriculum and Instruction Services Division, Philippine Science High School-Cordillera Administrative Region Campus, Purok 12, Irisan Lime Kiln, Irisan, Baguio City. Email: josepuses@gmail.com}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\listoftables
+\listoflistings
+\section{Introduction}
+
+Write some cited related literatures here.
+
+\subsection{Definition of Terms}
+The following terms are defined as they are used in this study.
+
+\paragraph{Bad item} This is an item that is too hard, too easy, or has a very low item-total correlations. The rules for determining bad items is summarized in Table~\ref{tab:rule}.
+
+\begin{flushleft}
+\captionof{table}{\label{tab:rule} Rules for determining bad items}
+\begin{tabular}{ll}
+\toprule
+Description of item & Rule \\
+\midrule
+Too hard & mean < 0.1\\
+Too easy & mean > 0.9\\
+Low r & r < 0.3\\
+\bottomrule
+\end{tabular}
+\end{flushleft}
+
+\section{Methods}
+The UPCAT 310-item Pre-Test was administered to \Sexpr{nrow(cases)} members of Batch 2014. The test ran for a total of 3 hours, compared to the 3 hours and 45 minutes in the actual UPCAT. The students' responses were encoded in a spreadsheet file,\Cases, using LibreOffice Calc. \Cases\ was saved in the folder \texttt{data}. The questions, choices and answer key were encoded in the file \Items, which was saved in the folder \texttt{meta}. Choice A was encoded as "1", choice B as "2", choice C as "3", choice D as "4", and choice E as "5". 
+
+The data were imported in R for tests of item-total correlation, index of difficulty, and reliability. These tests were conducted using the \texttt{psych} package. Additionally, the \texttt{CTT} package was used to perform Spearman-Brown prediction. Distractor analysis was then performed using LibreOffice Calc. 
+
+\subsection{Preparation of Data for Data Analysis}
+
+\paragraph{Importing Data} To import the response data to \Rstat{} the researcher used the code in Listing \ref{code:preliminaries}. Listing \ref{code:preliminaries} also set the initial settings, and loaded needed packages and metadata (e.g. the answer key).
+\begin{center}
+\captionof{listing}{\label{code:preliminaries} \Rstat{} code for initial settings, loading needed packages and metadata.}
+<<>>=
+<<initial_settings>>
+<<import_data>>
+@
+\end{center}
+
+\paragraph{Treatment of missing items} To prepare for test item analysis, the score of each student is computed using Listing \ref{code:scoring}. The \lstinline{missing = FALSE} option tells \Rstat{} not to include missed items as wrong answers.
+
+\begin{center}
+\captionof{listing}{\label{code:scoring}The \Rstat{} code for computing the scores of each student}
+<<score_test>>=
+itemstats <- score.multiple.choice(key = items$correct, 
+  		data = cases[,items$variable],score = TRUE, totals = TRUE, missing = FALSE,short=FALSE)
+@
+\end{center}
+
+\subsection{Initial Inspection of Items}
+
+\paragraph{Initial item analysis} Listing \ref{code:computation} lists the item numbers, the correct response (key), the proportion giving the response A(1), B(2), C(3), D(4), and E(5), the item-total correlation (r), the sample size (n), and the proportion correct (mean). The output is shown in Appendix~\ref{output:proportion}.
+\begin{center}
+\captionof{listing}{\label{code:computation} The \Rstat{} code that shows the item number, correct response (key), the proportion giving response A(1), B(2), C(3), D(4), and E(5), the item-total correlation (r), the sample size (n), and the proportion correct (mean)}
+<<print_main_item_stats>>=
+results = itemstats$item.stats[,c("key", "1", "2", "3", "4", "5", "r", "n", "mean")]
+@
+\end{center}
+
+\paragraph{Determination of outliers} A stem plot was required by the researcher to determine whether there are outliers in the result. These outliers may be deleted.
+
+\begin{center}
+\captionof{listing}{\label{code:stem} \Rstat{} code for computing skewness and kurtosis, and for displaying the stem plot for scores.}
+<<distribution_of_scores>>=
+scases <- data.frame(score.multiple.choice(key = items$correct, 
+    	data = cases[,items$variable], score=FALSE))
+scases$correct <-	apply(scases, 1, mean)
+scases$id <- cases$id
+description = psych::describe(scases$correct)
+stem(scases$correct)
+@
+\end{center}
+
+\subsection{Reliability}
+The internal consistency using Cronbach's alpha was then computed using the code in Listing~\ref{code:cronalpha}.
+\begin{center}
+\captionof{listing}{\label{code:cronalpha} This \Rstat{} code computes the value of the Cronbach's alpha for the measure of the test's internal consistency.}
+<<310item_alpha>>=
+CronAlpha = itemstats$alpha
+@
+\end{center}
+
+\subsection{Removal of poor items}
+It is now necessary to tell \Rstat{} how to flag bad items, including the items that are either too difficult or too easy, and the items with very low item-total correlations, as specified by the rule in Table \ref{tab:rule}.
+
+\begin{center}
+\captionof{listing}{\label{code:baditems} The \Rstat{} code setting the rules for determining and displaying the bad items, including very easy and very difficult items, and items with very low item-total correlations.}
+<<flag_bad_items>>=
+rules <- list(
+  	tooEasy = .9,
+		tooHard = .1,
+		lowR = .15) # Sets the rules for flagging bad items
+itemstats$item.stats$lowR <- 
+		itemstats$item.stats$r < rules$lowR
+LowR <- row.names(itemstats$item.stats[itemstats$item.stats$lowR, ]) # Displays items with low item-total correlation when LowR is called
+itemstats$item.stats$lowR[is.na(itemstats$item.stats$lowR)] <- TRUE 
+itemstats$item.stats$tooEasy <- 
+		itemstats$item.stats$mean > rules$tooEasy
+TooEasy <- row.names(itemstats$item.stats[itemstats$item.stats$tooEasy, ]) # Displays too easy items when TooEasy is called
+itemstats$item.stats$tooHard <- 
+		itemstats$item.stats$mean < rules$tooHard
+TooHard <- row.names(itemstats$item.stats[itemstats$item.stats$tooHard, ]) # Displays too hard items when TooHard is called
+itemstats$item.stats$baditem <-
+		with(itemstats$item.stats,
+				(lowR | tooHard | tooEasy))
+baditems <- row.names(itemstats$item.stats[
+						itemstats$item.stats$baditem, ]) # Displays all of the bad items when baditems is called
+@
+\end{center}
+
+Consequently, the good items are coded as the negation of bad items, as shown in Listing~\ref{code:gooditems}. The determination of good items is then used for the computation of predicted number of items using Spearman-Brown prophecy formula for a given Cronbach's alpha of 0.8.
+\begin{center}
+\captionof{listing}{\label{code:gooditems} \Rstat{} code to determine good items for use in Spearman-Brown prophecy}
+<<good_items>>=
+gooditems <- row.names(itemstats$item.stats[
+    				!itemstats$item.stats$baditem, ]) # Defined for computation of Spearman-Brown predicted value for a given Cronbach's alpha
+@
+\end{center}
+
+The reliability can then be calculated on the modified scale 
+with the items flagged as bad removed. This is done by through the \Rstat{}, as can be seen in the code in Listing~\ref{code:reditem}.
+\begin{center}
+\captionof{listing}{\label{code:reditem} \Rstat{} code to calculate the reliability on the modified scale with the items flagged as bad removed}
+<<reduced_items_itemstats>>=
+reditemstats <- score.multiple.choice(
+  key = items[items$variable %in% gooditems, "correct"], 
+  	data = cases[,gooditems])
+@
+\end{center}
+
+\paragraph{The Spearman Brown estimate} The Spearman Brown prophecy formula provides a means of estimating the number of items required to achieve a given alpha. 
+
+\begin{center}
+\captionof{listing}{\label{code:SBF} The \Rstat{} code for estimating the number of items required to achieve a given alpha using the Spearman Brown prophecy formula}
+<<calculate_spearman_brown>>=
+sbrown <- list()
+sbrown$targetAlpha <- .8
+sbrown$actualAlpha <- reditemstats$alpha
+sbrown$multiple <- CTT::spearman.brown(sbrown$actualAlpha , .8, "r")$n.new 
+sbrown$refinedItemCount <- nrow(reditemstats$item.stats) * sbrown$multiple
+sbrown$totalItemCount <- nrow(itemstats$item.stats) * sbrown$multiple 
+@
+\end{center}
+
+\subsection{Distractor Analysis}
+
+The students' responses and the answer keys were saved in a separate file \texttt{checking.ods} in LibreOffice in order to facilitate distractor. The researcher adapted the distractor analysis procedure in Microsoft Excel, as described in \textcite{elvin}, for LibreOffice. 
+
+\section{Results and Discussion}
+\subsection{Initial inspection of items}
+The output of the item analysis is shown in Appendix~\ref{output:proportion}. There are no outliers in the scale as shown in the stem plot in Figure~(blahblah). However, the result of the code in Listing~\ref{code:stem}, as shown in Figure~\ref{output:description}, that the scale is positively skewed, indicating that, mostly, the students' scores are below the mean; that is, the students performed poorly in the UPCAT Pre-Test.
+
+\begin{center}
+<<echo=FALSE>>=
+description
+@
+\captionof{figure}{\label{output:description} Output of Listing~\ref{code:stem}}
+\end{center}
+
+\subsection{Reliability}
+
+Using all \Sexpr{nrow(items)} items the scale has high reliabilty
+(alpha = \Sexpr{itemstats$alpha}). (Write discussion of the result of the reliability here.)
+
+\subsection{Removal of poor items}
+
+Overall, the three rules listed in Table~\ref{tab:rule} and coded in Listing~\ref{code:baditems} flagged 
+\Sexpr{sum(itemstats$item.stats$baditem)} of 
+\Sexpr{length(itemstats$item.stats$baditem)} items as bad. Of these bad items, \Sexpr{rules$tooEasy} are too easy, \Sexpr{rules$tooHard}, and \Sexpr{rules$lowR} have low item--total correlation.
+
+\begin{table}[ht]
+\caption{\label{lowitem} Item numbers with low item-total correlation per subject area (the same as having a low index of difficulty, meaning, more students with low scores than with high scores were able to get the correct answer).}
+\begin{tabular}{lp{0.9\textwidth}}
+\toprule
+Subject & Item Numbers\\
+\midrule
+English & 3, 4, 5, 6, 7, 9, 11, 12, 13, 16, 24, 25, 26, 28, 30, 32, 34, 35, 38, 40, 42, 43, 44, 52, 55, 56, 65\\
+Filipino & 66, 68, 69, 71, 72, 73, 74, 76, 77, 79, 80, 81, 84, 85, 86, 87, 88, 89, 90, 92, 93, 96, 98, 99, 100, 101, 102, 103, 104, 105, 110, 112, 114, 115, 117, 118, 122, 123, 124\\
+Geology & 126, 128, 129, 131, 135, 136, 139, 140, 145, 146, 148, 149, 153, 155, 157, 158\\
+Physics & 168, 170, 172, 175, 176, 177, 178, 181, 184, 186, 187, 188, 189\\
+Chemistry & 191, 192, 193, 194, 195, 196, 197, 202, 204, 206, 208, 209, 210, 211, 212, 215, 216, 217, 219, 220\\
+Biology & 224, 227, 229, 230, 231, 232, 233, 235, 236, 237, 240, 241, 242, 245, 246, 247, 248, 250\\
+Math & 251, 253, 254, 255, 258, 259, 261, 262, 263, 265, 266, 268, 269, 272, 273, 275, 276, 277, 279, 280, 282, 284, 286, 287, 288, 290, 291, 292, 295, 297, 298, 299, 300, 301, 303, 304, 305, 306, 307, 308, 309, 310\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+%Item 23 appears to be easy.
+%The absence of variability means that item-total correlations 
+%can not be calculated for this item.
+%A quick look at the item suggests why this might be the case:
+
+%<<inspect_item23>>=
+%t(items[items$item == 23, ])
+%@
+
+
+
+
+
+The following figure plots proportion answering the item
+correct by item-total correlation.
+The horizontal and vertical lines represent rough rules of thumb
+ dividing poorer from better items
+ (i.e., those with a mean that differentiates
+ and an item-total correlation that suggests that the item
+ is measuring a meaningful construct).
+Thus, items in the middle upper section might be regarded as better items.
+
+However, several caveats should be mentioned.
+(a) these are only sample estimates,
+(b) what constitutes a good item depends on purpose,
+(c) inferences are best made when the external sample is the
+ same as the norm sample.
+
+
+<<plot_mean_by_r>>=
+plot(r ~ mean , itemstats$item.stats, type="n")
+text(itemstats$item.stats$mean, itemstats$item.stats$r, 1:310)
+abline(h=.2, v=c(.5, .9))
+@
+
+
+
+
+%With the outlier cases the scale reliability was estimated to be 
+%\Sexpr{itemstats[["alpha"]]}
+%with the outlier cases removed scale reliability 
+%was estimated to be \Sexpr{oritemstats[["alpha"]]}
+%The lesson to be learnt here is that failure to remove outlier
+%cases can lead to a gross overestimation of the reliability of a scale.
+
+
+
+The resulting reliability was 
+\Sexpr{reditemstats$alpha} up from
+\Sexpr{itemstats$alpha}.
+
+
+
+The formula suggests  that in order to obtain
+an alpha of \Sexpr{sbrown$targetAlpha},
+\Sexpr{round(sbrown$multiple, 2)} times as many items are required.
+Thus, the final scale would need around
+\Sexpr{ceiling(sbrown$refinedItemCount)} items.
+Assuming a similar number of good and bad items,
+this would require an initial pool of around
+\Sexpr{ceiling(sbrown$totalItemCount)} items.  
+%It should also be noted that these are probably under estimates
+%given (a) the relatively small sample size, 
+%and (b) item total correlations
+%and alpha are likely to be positively biased due to the selection 
+%procedure used for identifying good test items. 
+
+\section{Conclusion and Recommendation}
+Bad items should be improved through revision. Further work should include distractor analsysis in order to determine whether the choices shold also be revised. Blah blah blah.
+
+\printbibliography
+
+\appendix
+\section{\label{output:proportion}Proportion correct and item-total correlations}
+<<>>=
+results
+@
+\end{document}
